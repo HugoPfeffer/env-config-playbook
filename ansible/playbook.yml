@@ -1,0 +1,9 @@
+---
+- hosts: master
+  roles: 
+    - docker 
+    - docker-compose 
+- hosts: rhel8
+  roles:
+    - updates 
+    - customizations

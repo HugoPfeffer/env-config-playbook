@@ -1,0 +1,11 @@
+---
+######## UPDATE AND UPGRADE YUM REPOS ######## 
+- name: 'update and upgrade yum packeges' 
+  yum: 
+    name: '*'
+    state: latest
+    update_cache: yes
+  become: yes
+
+
+
