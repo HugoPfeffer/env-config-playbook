@@ -1,4 +1,7 @@
 # Master vars
+$ssh_copy_id = <<-SCRIPT
+echo ""
+SCRIPT
 Vagrant.configure("2") do |config|
   # Box de Ansible (master)
   config.vm.define 'master' do |master|
