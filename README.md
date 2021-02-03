@@ -44,6 +44,22 @@ vagrant up && vagrant ssh
 The ansible playbook should be executed on the box start, if not, run the playbook manually with the `ansible-playbook` command. 
 
 
+<br>
+<br>
+
+<h2>Bugs</h2>
+
+* At the installation of the Epel repo, it might fail with a GPG check. A workaround for that is to disable the GPG check with:
+  ```yml
+  - name: 'Adiciona Epel-release'
+  dnf: 
+    disable_gpg_check: yes
+    name: 'https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm'
+    state: present
+  become: yes
+  ```
+
+
 
 </br>
 
