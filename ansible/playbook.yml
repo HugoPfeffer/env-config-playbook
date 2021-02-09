@@ -1,9 +1,11 @@
 ---
-- hosts: master
-  roles: 
-    - docker 
-    - docker-compose 
+# - hosts: master
+#   roles: 
+#     - docker 
+#     - docker-compose 
 - hosts: rhel8
   roles:
     - updates 
     - customizations
+    - virtualbox
+    - minikube
