@@ -1,5 +1,5 @@
 ---
-- name: 'Adiciona usuário hupfer com sudo priveleges' 
+- name: 'Adicionando usuário hupfer com sudo priveleges' 
   user: 
     name: hupfer
     groups: 
@@ -9,7 +9,7 @@
   become: yes
 
 
-- name: 'Adiciona Epel-release'
+- name: 'Adicionando Epel-release'
   dnf: 
     name: 'https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm'
     state: present

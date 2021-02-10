@@ -5,8 +5,8 @@
 #     - docker-compose 
 - hosts: rhel8
   roles:
-    - updates 
     - customizations
+    - updates 
     - docker
     - docker-compose
     - virtualbox
