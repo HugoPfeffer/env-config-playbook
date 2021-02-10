@@ -5,15 +5,19 @@
 #     - docker-compose 
 - hosts: rhel8
   # tasks:
-  #   - name: "teste"
-  #     ansible.builtin.debug:
-  #       msg: "{{ ansible_env['USER'] }}"
+    # - name: "teste"
+    #   when: ansible_env.USER == "root"
+    #   ansible.builtin.debug:
+    #     msg: "{{ ansible_env['USER'] }}"
+
+
   roles:
     - customizations
-    - updates 
     - docker
     - docker-compose
     - virtualbox
     - minikube
     - kubernetes
     - neofetch
+    - neovim
+    - tmux

@@ -24,7 +24,8 @@
     state: started
   become: yes
 
-- name: "Adicionando user vagrant ao grupo docker"
+- name: "Adicionando user {{ ansible_env['USER'] }} ao grupo docker"
+  when: ansible_env.USER != "root"
   user:
     name: "{{ ansible_env['USER'] }}"
     comment: default user

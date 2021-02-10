@@ -4,6 +4,7 @@
     name: hupfer
     groups: 
       - wheel
+      - admin
     append: yes
     state: present
   become: yes
