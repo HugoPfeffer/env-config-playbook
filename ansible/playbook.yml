@@ -4,6 +4,10 @@
 #     - docker 
 #     - docker-compose 
 - hosts: rhel8
+  # tasks:
+  #   - name: "teste"
+  #     ansible.builtin.debug:
+  #       msg: "{{ ansible_env['USER'] }}"
   roles:
     - customizations
     - updates 

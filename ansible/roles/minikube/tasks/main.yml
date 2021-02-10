@@ -5,9 +5,14 @@
     state: latest
   become: yes
 - name: 'Instalando Minikube'
-  get_url:
-    url: https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
-    dest: /home/hupfer/minikube
-    mode: -x
+  dnf:
+    disable_gpg_check: yes
+    name: "https://storage.googleapis.com/minikube/releases/latest/minikube-latest.x86_64.rpm"
+    state: present  
   become: yes
-  
+# - name: 'Instalando Minikube'
+#   get_url:
+#     url: https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+#     dest: /usr/local/bin/minikube
+#     mode: -x
+#   become: yes

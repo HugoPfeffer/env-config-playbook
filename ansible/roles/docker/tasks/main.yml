@@ -1,34 +1,36 @@
 ---
 ######## DOCKER INSTALL ######## 
-- name: 'Adiciona packages' 
+- name: 'Adicionando pacotes' 
   yum: 
     name: 'yum-utils'
     state: latest
   become: yes
 
-- name: 'Add Docker repo'
+- name: 'Adicionando repo Docker'
   get_url:
     url: https://download.docker.com/linux/centos/docker-ce.repo
     dest: /etc/yum.repos.d/docer-ce.repo
   become: yes
 
-- name: 'Instala o Docker e suas dependencias' 
+- name: 'Instalando o Docker e suas dependencias' 
   yum: 
     name: ['docker-ce', 'docker-ce-cli', 'containerd.io']
     state: latest
   become: yes
 
-- name: 'Inicia o serviço Docker'
+- name: 'Iniciando o serviço Docker'
   service: 
     name: docker
     state: started
   become: yes
 
-- name: "Adiciona user vagrant ao grupo docker"
+- name: "Adicionando user vagrant ao grupo docker"
   user:
-    name: vagrant
+    name: "{{ ansible_env['USER'] }}"
     comment: default user
-    group: docker 
+    groups: 
+      - docker 
+    state: present
   become: yes
 
 
