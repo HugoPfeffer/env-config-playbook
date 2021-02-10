@@ -1,0 +1,21 @@
+---
+- name: 'Instalar neofetch'
+  dnf:
+    name: 'neofetch'
+    state: present
+  become: yes
+
+- name: 'Adicionar neofetch call no .bash_profile'
+  lineinfile: 
+    insertafter: EOF
+    path: /home/hupfer/.bash_profile
+    backup: yes
+    line: 'neofetch'
+
+- name: 'Adicionar prompt custom no terminal'
+  lineinfile: 
+    insertafter: EOF
+    path: /home/hupfer/.bashrc
+    backup: yes
+    line: 'PS1="\e[1;34m[\u@\h \W]\$ \e[0m"'
+

@@ -15,11 +15,6 @@
     state: present
   become: yes
 
-- name: 'Instala neofetch'
-  dnf:
-    name: 'neofetch'
-    state: present
-  become: yes
 
 # - name: 'Adiciona mensagem customizada ao message of the day'
 #   blockinfile:
@@ -75,16 +70,3 @@
 #       EOF
 #   become: yes
 
-- name: 'Adiciona neofetch call no .bashrc'
-  lineinfile: 
-    insertafter: EOF
-    path: /home/hupfer/.bashrc
-    backup: yes
-    line: 'neofetch'
-
-- name: 'Adiciona prompt custom no terminal'
-  lineinfile: 
-    insertafter: EOF
-    path: /home/hupfer/.bashrc
-    backup: yes
-    line: 'PS1="\e[1;34m[\u@\h \W]\$ \e[0m"'

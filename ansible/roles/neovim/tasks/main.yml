@@ -1,0 +1,6 @@
+---
+- name: "Instalar neovim"
+  dnf:
+    name: "neovim"
+    state: present
+  become: yes

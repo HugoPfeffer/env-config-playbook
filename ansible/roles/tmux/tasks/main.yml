@@ -1,0 +1,7 @@
+---
+- name: "Instalar tmux"
+  dnf: 
+    name: "tmux"
+    state: present
+  become: yes
+  

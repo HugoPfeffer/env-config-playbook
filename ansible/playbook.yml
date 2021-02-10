@@ -7,5 +7,9 @@
   roles:
     - updates 
     - customizations
+    - docker
+    - docker-compose
     - virtualbox
     - minikube
+    - kubernetes
+    - neofetch
