@@ -59,6 +59,14 @@ The ansible playbook should be executed on the box start, if not, run the playbo
   become: yes
   ```
 
+  Or add the GPG signature manually: 
+  ```yml
+  - rpm_key:
+    state: present
+    key: https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-8
+  ```
+
+Some other packages might need a GPG signature, like Minikube. 
 
 
 </br>
